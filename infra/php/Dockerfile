@@ -5,7 +5,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1 \
 # composerコマンドを実行したときの作業ディレクトリをcomposer以下に設定
   COMPOSER_HOME=/composer
 
-COPY --from=composer:2.2 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN apt-get update && \
   apt-get -y install --no-install-recommends git unzip libzip-dev libicu-dev libonig-dev && \
